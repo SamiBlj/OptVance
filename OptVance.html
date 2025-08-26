@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OPTVANCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e141b;
+      --bg-2:#111922;
+      --card:#17212b;
+      --text:#e6edf3;
+      --muted:#a9b4bf;
+      --brand:#6ee7b7; /* mint */
+      --accent:#60a5fa; /* blue */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    .container{max-width:var(--max);margin-inline:auto;padding:40px 24px}
+    .btn{display:inline-block;padding:.8rem 1.1rem;border-radius:999px;font-weight:600;background:#1f2937;color:#eafff5;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);text-decoration:none}
+    .btn:hover{background:#223043}
+
+    /* Hero Section */
+    .hero{position:relative;min-height:520px;display:grid;place-items:center;background:#0a0f14;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1517034779162-468b0f9a1f17?q=80&w=2400&auto=format&fit=crop') center/cover no-repeat;filter:contrast(1.05) saturate(0.9) brightness(0.7)}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 420px at 20% 10%, rgba(96,165,250,.25), transparent 60%),linear-gradient(to bottom, rgba(4,7,10,.0), rgba(4,7,10,.7) 60%, #0e141b 100%)}
+    .hero-content{position:relative;z-index:1;align-self:start;padding-top:80px}
+    .eyebrow{color:#c9ffd6;font-weight:600;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-weight:800;font-size:clamp(2.1rem, 4vw + 1rem, 3.2rem);line-height:1.1;margin:.35rem 0 1rem}
+    .sub{color:var(--muted);max-width:680px;font-size:1.05rem}
+
+    /* The Section Base */
+    section{background:var(--bg-2)}
+    section.alt{background:#fff;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;color:#0f172a}
+    .section-head{margin-bottom:22px}
+    .kicker{color:#9ca3af;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    h2{font-size:1.6rem;margin:.2rem 0 0;font-weight:800}
+
+    /* About Section */
+    .about{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 .4rem;font-size:1.05rem}
+    .card p{margin:.25rem 0;color:var(--muted)}
+    .mini{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    /* Industries Section */
+    .industries{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+    .industry{background:#ffffff;border-radius:var(--radius);border:1px solid #e5e7eb;overflow:hidden;box-shadow:0 8px 24px rgba(2,6,23,.08)}
+    .industry img{display:block;width:100%;height:170px;object-fit:cover}
+    .industry .label{padding:12px 14px;font-weight:600;color:#111827}
+
+    /* Solution Demo Section */
+    .demo{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+    .bullets{list-style:none;margin:0;padding:0}
+    .bullets li{margin:.6rem 0;padding-left:28px;position:relative;color:var(--muted)}
+    .bullets li::before{content:"›";position:absolute;left:0;top:0;color:var(--accent);font-weight:800}
+
+    /* UTIL */
+    .shadow-sm{box-shadow:0 6px 18px rgba(0,0,0,.18)}
+    .mt-24{margin-top:24px}
+    .mt-40{margin-top:40px}
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .about{grid-template-columns:1fr}
+      .demo{grid-template-columns:1fr}
+    }
+    @media (max-width: 760px){
+      .industries{grid-template-columns:1fr}
+      .hero{min-height:520px}
+      .hero-content{padding-top:40px}
+    }
+      /* NAV */
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(6px);background:linear-gradient( to bottom, rgba(14,20,27,.9), rgba(14,20,27,.65));border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav .bar{max-width:var(--max);margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:18px}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .spacer{flex:1}
+    .nav a{color:#d1d5db;text-decoration:none;font-weight:600;font-size:.95rem;padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+
+    /* GRID CARDS */
+    .grid{display:grid;gap:22px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media(max-width:980px){.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+
+    .pill{display:inline-block;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:.8rem;color:#bcd0de}
+    .muted{color:var(--muted)}
+
+    /* CONTACT */
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    form input, form textarea, form select{width:100%;background:#0a0f14;border:1px solid rgba(255,255,255,.12);color:var(--text);border-radius:12px;padding:.85rem}
+    form textarea{min-height:130px}
+    form button{cursor:pointer}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="bar">
+      <div class="brand">OPTVANCE</div>
+      <div class="spacer"></div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#industries">Industries</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#insights">Insights</a>
+      <a href="#investors">Investors</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">AI‑Powered Software</div>
+      <h1>Operational Excellence in Energy</h1>
+      <p class="sub">Transforming oil &amp; gas, power &amp; utilities, and mining with intelligent, sustainable platforms.</p>
+<!--      <a class="btn mt-24" href="#impact">See Our Impact</a> -->
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">About OPTVANCE</div>
+        <h2>Mission &amp; Vision</h2>
+      </div>
+      <div class="about">
+        <div class="card">
+          <h3>Mission</h3>
+          <p>Help energy companies achieve operational excellence &amp; sustainability by AI‑first software.</p>
+          <h3 class="mt-24">Vision</h3>
+          <p>Lead the AI‑powered transformation of legacy infrastructure globally.</p>
+        </div>
+        <div class="card shadow-sm">
+          <h3>Operational Insights</h3>
+          <p>Assorted operational data unified into fast, intuitive software for frontline teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head" style="text-align:center">
+        <div class="kicker">Industries We Serve</div>
+        <h2>Built for Complex Operations</h2>
+      </div>
+      <div class="industries">
+        <article class="industry">
+          <img alt="Oil &amp; Gas" src="data:image/jpeg;base64,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" />
+          <div class="label">Oil &amp; Gas</div>
+        </article>
+        <article class="industry">
+          <img alt="Power &amp; Utilities" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfL-8ooc18yROc4TpP4tlL5zwwy8B5iaXKL49EWK_DiGWKSN7bLEDOHiFnoiJMWdnOWs&usqp=CAU" />
+          <div class="label">Power &amp; Utilities</div>
+        </article>
+        <article class="industry">
+          <img alt="Mining" src="https://www.investopedia.com/thmb/s9yBqSo9G8gP9yTAtRG3mEzv1dc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/INV_Newmont_Gold_Mining_GettyImages-156830457-a48da3369e0f4d02b85c92bc5b7370ab.jpg" />
+          <div class="label">Mining</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION DEMO 
+  <section>
+    <div class="container">
+      <div class="demo">
+        <img alt="Industrial control" style="width:100%;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)" src="https://images.unsplash.com/photo-1560159109-6ddd30a3889a?q=80&w=1600&auto=format&fit=crop" />
+        <div>
+          <div class="kicker">Solution Demo</div>
+          <h2>From Insight to Throughput</h2>
+          <ul class="bullets mt-24">
+            <li>Pipeline slugging, $900M lost revenues</li>
+            <li>AI prediction, operator‑in‑loop guidance (cloud/on‑prem)</li>
+            <li>↑ Throughput, ↓ Downtime, ↓ Flaring</li>
+          </ul>
+          <a class="btn mt-24" href="#demo">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+  <!-- WHY OPTVANCE / DIFFERENTIATORS -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Why OPTVANCE</div>
+        <h2>Differentiators that Drive Outcomes</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><h3>AI‑First Architecture</h3><p class="muted">Purpose‑built models and data fabric tuned for energy operations—fast to deploy, easy to govern.</p></div>
+        <div class="card"><h3>Operator‑in‑Loop</h3><p class="muted">Guidance designed around control‑room workflows for trustworthy, auditable decisions.</p></div>
+        <div class="card"><h3>Hybrid Cloud / On‑Prem</h3><p class="muted">Run where your data and regulations require: secure edge, on‑prem, or cloud.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT FULL -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><div class="kicker">About</div><h2>Mission, Vision & Leadership</h2></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Mission & Vision</h3><p class="muted">Help energy companies achieve operational excellence & sustainability by AI‑first software. Lead the AI‑powered transformation of legacy infrastructure globally.</p></div>
+        <div class="card"><h3>Company Overview</h3><p class="muted">Industrial‑grade platform with modules for optimization, simulation, compliance and safety—built with security and reliability at the core.</p></div>
+        <div class="card"><h3>Partners & Ecosystem</h3><p class="muted">Technology alliances and system integrators to accelerate delivery and value capture.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES EXPANDED 
+  <section class="alt" id="industries">
+    <div class="container">
+      <div class="section-head" style="text-align:center">
+        <div class="kicker">Industries</div>
+        <h2>Oil & Gas • Power & Utilities • Mining</h2>
+      </div>
+      <div class="industries">
+        <article class="industry"><img alt="Oil & Gas" src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1200&auto=format&fit=crop"><div class="label">Oil & Gas<br><span class="muted" style="font-weight:500">Slug Mitigation & Optimization</span></div></article>
+        <article class="industry"><img alt="Power & Utilities" src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?q=80&w=1200&auto=format&fit=crop"><div class="label">Power & Utilities<br><span class="muted" style="font-weight:500">Smart Grids, Predictive Maintenance</span></div></article>
+        <article class="industry"><img alt="Mining" src="https://images.unsplash.com/photo-1605472959966-12b3efb581df?q=80&w=1200&auto=format&fit=crop"><div class="label">Mining<br><span class="muted" style="font-weight:500">Operational Safety & ESG</span></div></article>
+      </div>
+    </div>
+  </section>
+
+-->
+
+  <!-- SOLUTIONS OVERVIEW -->
+  <section class="alt" id="solutions">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Solutions</div><h2>SMOS & AI Platform Modules</h2></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <span class="pill">Flagship</span>
+          <h3 class="mt-24">Slug Mitigation & Optimization System (SMOS)</h3>
+          <p class="muted">Detects, predicts, and mitigates pipeline slugging in real time. Reduces downtime and flaring while maximizing throughput.</p>
+          <ul class="bullets mt-24">
+            <li>Physics‑informed ML with operator guidance</li>
+            <li>Closed‑loop optimization to hit constraints</li>
+            <li>Edge‑ready for low‑latency environments</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="pill">Platform</span>
+          <h3 class="mt-24">AI Modules</h3>
+          <p class="muted">Composable applications you can deploy as needed.</p>
+          <ul class="bullets mt-24">
+            <li>Optimization</li>
+            <li>Simulation & Digital Twin</li>
+            <li>Compliance & Reporting</li>
+            <li>Predictive Maintenance</li>
+            <li>Safety & Anomaly Detection</li>
+          </ul>
+          <p class="muted">Deployment Options: Cloud, On‑Prem, Hybrid.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section id="insights">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Insights</div><h2>Articles, Case Studies & Press</h2></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Articles & Whitepapers</h3><p class="muted">Deep dives on AI in energy transition and high‑reliability operations.</p></div>
+        <div class="card"><h3>Case Studies & ROI</h3><p class="muted">Measurable impact on throughput, downtime, and emissions across assets.</p></div>
+        <div class="card"><h3>News & Press</h3><p class="muted">Company announcements, product updates, and partnerships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTORS -->
+  <section id="investors">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Investors</div><h2>Vision, Roadmap & Materials</h2></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Funding Vision & Strategy</h3><p class="muted">Scaling deployment across global assets while compounding product moats.</p></div>
+        <div class="card"><h3>Roadmap & Milestones</h3><p class="muted">Enterprise readiness, module expansion, and regional rollouts.</p></div>
+        <div class="card"><h3>Investor Materials</h3><p class="muted">Pitch decks and data room on request.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="alt" id="careers">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Careers</div><h2>Build the Future of Industrial AI</h2></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Open Roles</h3><p class="muted">Applied ML, Controls, Reliability, Product, and Field Engineering.</p></div>
+        <div class="card"><h3>Internships & Programs</h3><p class="muted">Graduate opportunities with mentorship in real‑world operations.</p></div>
+        <div class="card"><h3>Life at OPTVANCE</h3><p class="muted">Mission‑driven, safety‑first culture with global impact. Why Abu Dhabi (Hub17) & ecosystem benefits.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Contact</div><h2>Get in Touch</h2></div>
+      <div class="demo">
+        <div class="card">
+          <h3>Request a Demo</h3>
+          <form>
+            <div class="row">
+              <input placeholder="First name" required>
+              <input placeholder="Last name" required>
+            </div>
+            <div class="row">
+              <input placeholder="Work email" type="email" required>
+              <input placeholder="Company" required>
+            </div>
+            <select class="mt-24">
+              <option>Interest — Select</option>
+              <option>SMOS</option>
+              <option>Optimization</option>
+              <option>Simulation</option>
+              <option>Compliance</option>
+            </select>
+            <textarea class="mt-24" placeholder="Tell us about your operations"></textarea>
+            <button class="btn mt-24" type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Partnerships</h3>
+            <p class="muted">Ecosystem and SI inquiries welcome.</p>
+          </div>
+          <div class="card mt-24">
+            <h3>Global & Regional Offices</h3>
+            <p class="muted">Headquarters — Abu Dhabi (Hub17). Regional presence across MENA, Europe, and North America.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0a0f14;color:#9ca3af">
+    <div class="container" style="text-align:center;font-size:.9rem">
+      © 2025 OPTVANCE. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
