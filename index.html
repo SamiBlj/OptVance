@@ -261,7 +261,7 @@
       <div class="grid cols-2">
         <div class="card">
           <span class="pill">Flagship</span>
-          <h3 class="mt-24">Slug Mitigation & Optimization System (SMOS)</h3>
+          <h3 class="mt-24" style = "color:white;">Slug Mitigation & Optimization System (SMOS)</h3>
           <p class="muted">Detects, predicts, and mitigates pipeline slugging in real time. Reduces downtime and flaring while maximizing throughput.</p>
           <ul class="bullets mt-24">
             <li>Physics‑informed ML with operator guidance</li>
@@ -271,7 +271,7 @@
         </div>
         <div class="card">
           <span class="pill">Platform</span>
-          <h3 class="mt-24">AI Modules</h3>
+          <h3 class="mt-24" style = "color : white">AI Modules</h3>
           <p class="muted">Composable applications you can deploy as needed.</p>
           <ul class="bullets mt-24">
             <li>Optimization</li>
@@ -327,9 +327,9 @@
     <div class="container">
       <div class="section-head"><div class="kicker">Careers</div><h2>Build the Future of Industrial AI</h2></div>
       <div class="grid cols-3">
-        <div class="card"><h3>Open Roles</h3><p class="muted">Applied ML, Controls, Reliability, Product, and Field Engineering.</p></div>
-        <div class="card"><h3>Internships & Programs</h3><p class="muted">Graduate opportunities with mentorship in real‑world operations.</p></div>
-        <div class="card"><h3>Life at OPTVANCE</h3><p class="muted">Mission‑driven, safety‑first culture with global impact. Why Abu Dhabi (Hub17) & ecosystem benefits.</p></div>
+        <div class="card"><h3 style = "color:white;">Open Roles</h3><p class="muted">Applied ML, Controls, Reliability, Product, and Field Engineering.</p></div>
+        <div class="card"><h3 style = "color:white;">Internships & Programs</h3><p class="muted">Graduate opportunities with mentorship in real‑world operations.</p></div>
+        <div class="card"><h3 style = "color:white;">Life at OPTVANCE</h3><p class="muted">Mission‑driven, safety‑first culture with global impact. Why Abu Dhabi (Hub17) & ecosystem benefits.</p></div>
       </div>
     </div>
   </section>
@@ -339,37 +339,39 @@
   <section id="contact">
     <div class="container">
       <div class="section-head"><div class="kicker">Contact & Demo</div><h2>Get in Touch</h2></div>
-      <form action="https://formspree.io/f/movnqreg" method="POST">
-          <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label> Your message: <textarea name="message"></textarea></label>
+     <!-- <form action="https://formspree.io/f/movnqreg" method="POST">
+          <label>Your email: <input type="email" name="email"></label>
+          <label>Interest - Select 
+            <select class="mt-24">
+          <option>SMOS</option>
+          <option>Optimization</option>
+          <option>Simulation</option>
+          <option>Compliance</option> </select> </label>
+  <label> Your message: <textarea name="message"></textarea></label> -->
   <div class="demo">
     <div class="card">
       <h3>Request a Demo</h3>
-      <form>
+      <form action = "https://formspree.io/f/movnqreg" method="POST">
         <div class="row">
-          <input placeholder="First name" required>
-          <input placeholder="Last name" required>
+          <label><input placeholder="First name" required></label>
+          <label><input placeholder="Last name" required></label>
         </div>
         <div class="row">
-          <input placeholder="Work email" type="email" required>
-          <input placeholder="Company" required>
+          <label><input placeholder="Work email" type="email" required></label>
+          <label><input placeholder="Company" required></label>
         </div>
-        <select class="mt-24">
+        <label><select class="mt-24">
           <option>Interest — Select</option>
           <option>SMOS</option>
           <option>Optimization</option>
           <option>Simulation</option>
           <option>Compliance</option>
-        </select>
-        <textarea class="mt-24" placeholder="Tell us about your operations"></textarea>
+        </select> </label>
+        <label><textarea class="mt-24" placeholder="Tell us about your operations"></textarea></label>
         <button class="btn mt-24" type="submit">Submit</button>
       </form>
     </div>
-  <button type="submit">Send</button>
-        </form>
+
 
         <div>
           <div class="card" style="max-width: 800px; margin: 0 auto;">
