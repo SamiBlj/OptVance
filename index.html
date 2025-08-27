@@ -110,24 +110,29 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#industries">Industries</a>
+      <a href="#why">Why Us</a>
       <a href="#solutions">Solutions</a>
       <a href="#insights">Insights</a>
       <a href="#investors">Investors</a>
-      <a href="#careers">Careers</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
   <!-- HERO -->
   <header class="hero">
+    <div id="home">
     <div class="container hero-content">
       <div class="eyebrow">AI‑Powered Software</div>
       <h1>Operational Excellence in Energy</h1>
       <p class="sub">Transforming oil &amp; gas, power &amp; utilities, and mining with intelligent, sustainable platforms.</p>
 <!--      <a class="btn mt-24" href="#impact">See Our Impact</a> -->
     </div>
+    </div>
   </header>
 
   <!-- ABOUT -->
+   <div id="about">
+    <br>
+    <br>
   <section>
     <div class="container">
       <div class="section-head">
@@ -148,8 +153,12 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- INDUSTRIES -->
+   <div id="industries">
+    <br>
+    <br>
   <section class="alt">
     <div class="container">
       <div class="section-head" style="text-align:center">
@@ -172,6 +181,7 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- SOLUTION DEMO 
   <section>
@@ -194,7 +204,10 @@
 -->
 
   <!-- WHY OPTVANCE / DIFFERENTIATORS -->
-  <section id="why">
+   <div id="why">
+    <br>
+    <br>
+  <section>
     <div class="container">
       <div class="section-head">
         <div class="kicker">Why OPTVANCE</div>
@@ -207,8 +220,9 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- ABOUT FULL -->
+  <!-- ABOUT FULL 
   <section id="about">
     <div class="container">
       <div class="section-head"><div class="kicker">About</div><h2>Mission, Vision & Leadership</h2></div>
@@ -218,7 +232,7 @@
         <div class="card"><h3>Partners & Ecosystem</h3><p class="muted">Technology alliances and system integrators to accelerate delivery and value capture.</p></div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- INDUSTRIES EXPANDED 
   <section class="alt" id="industries">
@@ -238,7 +252,10 @@
 -->
 
   <!-- SOLUTIONS OVERVIEW -->
-  <section class="alt" id="solutions">
+   <div  id="solutions">
+    <br>
+    <br>
+  <section class="alt">
     <div class="container">
       <div class="section-head"><div class="kicker">Solutions</div><h2>SMOS & AI Platform Modules</h2></div>
       <div class="grid cols-2">
@@ -268,9 +285,13 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- INSIGHTS -->
-  <section id="insights">
+   <div id="insights">
+    <br>
+    <br>
+  <section>
     <div class="container">
       <div class="section-head"><div class="kicker">Insights</div><h2>Articles, Case Studies & Press</h2></div>
       <div class="grid cols-3">
@@ -280,9 +301,13 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- INVESTORS -->
-  <section id="investors">
+   <div id="investors">
+    <br>
+    <br>
+  <section>
     <div class="container">
       <div class="section-head"><div class="kicker">Investors</div><h2>Vision, Roadmap & Materials</h2></div>
       <div class="grid cols-3">
@@ -292,9 +317,13 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- CAREERS -->
-  <section class="alt" id="careers">
+   <div id="careers">
+    <br>
+    <br>
+  <section class="alt">
     <div class="container">
       <div class="section-head"><div class="kicker">Careers</div><h2>Build the Future of Industrial AI</h2></div>
       <div class="grid cols-3">
@@ -304,40 +333,56 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="section-head"><div class="kicker">Contact</div><h2>Get in Touch</h2></div>
-      <div class="demo">
-        <div class="card">
-          <h3>Request a Demo</h3>
-          <form>
-            <div class="row">
-              <input placeholder="First name" required>
-              <input placeholder="Last name" required>
-            </div>
-            <div class="row">
-              <input placeholder="Work email" type="email" required>
-              <input placeholder="Company" required>
-            </div>
-            <select class="mt-24">
-              <option>Interest — Select</option>
-              <option>SMOS</option>
-              <option>Optimization</option>
-              <option>Simulation</option>
-              <option>Compliance</option>
-            </select>
-            <textarea class="mt-24" placeholder="Tell us about your operations"></textarea>
-            <button class="btn mt-24" type="submit">Submit</button>
-          </form>
+      <div class="section-head"><div class="kicker">Contact & Demo</div><h2>Get in Touch</h2></div>
+      <form action="https://formspree.io/f/movnqreg" method="POST">
+          <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label> Your message: <textarea name="message"></textarea></label>
+  <div class="demo">
+    <div class="card">
+      <h3>Request a Demo</h3>
+      <form>
+        <div class="row">
+          <input placeholder="First name" required>
+          <input placeholder="Last name" required>
         </div>
+        <div class="row">
+          <input placeholder="Work email" type="email" required>
+          <input placeholder="Company" required>
+        </div>
+        <select class="mt-24">
+          <option>Interest — Select</option>
+          <option>SMOS</option>
+          <option>Optimization</option>
+          <option>Simulation</option>
+          <option>Compliance</option>
+        </select>
+        <textarea class="mt-24" placeholder="Tell us about your operations"></textarea>
+        <button class="btn mt-24" type="submit">Submit</button>
+      </form>
+    </div>
+  <button type="submit">Send</button>
+        </form>
+
         <div>
-          <div class="card">
+          <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <h3>Contact</h3>
+            <p class="muted">team.support@optvance.ai</p>
+          </div>
+          <br>
+          <div class="card" style="max-width: 800px; margin: 0 auto;">
             <h3>Partnerships</h3>
             <p class="muted">Ecosystem and SI inquiries welcome.</p>
           </div>
-          <div class="card mt-24">
+          <br>
+          <div class="card mt-24" style="max-width: 800px; margin: 0 auto;">
             <h3>Global & Regional Offices</h3>
             <p class="muted">Headquarters — Abu Dhabi (Hub17). Regional presence across MENA, Europe, and North America.</p>
           </div>
@@ -345,6 +390,7 @@
       </div>
     </div>
   </section>
+
 
   <footer style="background:#0a0f14;color:#9ca3af">
     <div class="container" style="text-align:center;font-size:.9rem">
